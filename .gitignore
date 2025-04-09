@@ -1,0 +1,5 @@
+.idea/
+target/
+src/main/resources/plugin.yml
+*.xml
+*.iml
