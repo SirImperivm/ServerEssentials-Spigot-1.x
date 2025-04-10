@@ -1,5 +1,6 @@
 package me.sirimperivm.serverEssentials;
 
+import me.sirimperivm.serverEssentials.handlers.ConfigHandler;
 import me.sirimperivm.serverEssentials.utils.Logger;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -9,6 +10,8 @@ public final class ServerEssentials extends JavaPlugin {
     private ServerEssentials plugin;
     private static ServerEssentials instance;
 
+    private ConfigHandler configHandler;
+
     @Override
     public void onLoad() {
         plugin = this;
@@ -17,6 +20,8 @@ public final class ServerEssentials extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        configHandler = new ConfigHandler(plugin);
+
         Logger.success("ServerEssentials has been enabled!");
     }
 
@@ -31,5 +36,9 @@ public final class ServerEssentials extends JavaPlugin {
 
     public static ServerEssentials getInstance() {
         return instance;
+    }
+
+    public ConfigHandler getConfigHandler() {
+        return configHandler;
     }
 }
