@@ -21,6 +21,7 @@ public final class ServerEssentials extends JavaPlugin {
     @Override
     public void onEnable() {
         configHandler = new ConfigHandler(plugin);
+        Logger.setDebug(configHandler.getDebugMode());
 
         Logger.success("ServerEssentials has been enabled!");
     }

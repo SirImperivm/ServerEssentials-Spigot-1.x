@@ -21,6 +21,8 @@ public class ConfigHandler {
     private File settingsFile, messagesFile, modulesFile, storageFile;
     private FileConfiguration settings, messages, modules, storage;
 
+    private boolean debugMode;
+
     public ConfigHandler(ServerEssentials plugin) {
         this.plugin = plugin;
 
@@ -40,6 +42,8 @@ public class ConfigHandler {
 
         createAll();
         loadAll();
+
+        debugMode = settings.getBoolean("debug", false);
     }
 
     private void create(File f) {
@@ -133,5 +137,9 @@ public class ConfigHandler {
 
     public static String getTranslatedString(FileConfiguration c, String p, String d) {
         return Colors.translate(c.getString(p, d));
+    }
+
+    public boolean getDebugMode() {
+        return debugMode;
     }
 }
