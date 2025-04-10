@@ -1,5 +1,6 @@
 package me.sirimperivm.serverEssentials;
 
+import me.sirimperivm.serverEssentials.utils.Logger;
 import org.bukkit.plugin.java.JavaPlugin;
 
 @SuppressWarnings("all")
@@ -16,13 +17,12 @@ public final class ServerEssentials extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
-
+        Logger.success("ServerEssentials has been enabled!");
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        Logger.success("ServerEssentials has been disabled!");
     }
 
     public ServerEssentials getPlugin() {
