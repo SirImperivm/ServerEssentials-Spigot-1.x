@@ -5,11 +5,7 @@ import org.bukkit.Bukkit;
 @SuppressWarnings("all")
 public class Logger {
 
-    private static boolean debug;
-
-    public static void setDebug(boolean debug) {
-        Logger.debug = debug;
-    }
+    public static boolean debug;
 
     public static void success(String message) {
         Bukkit.getConsoleSender().sendMessage(Colors.translate("&a[ServerEssentials] " + message));
